@@ -1,4 +1,4 @@
-# HMI Simulation System
+# HMI Simulation System week-4
 
 This repository contains an HMI (Human-Machine Interface) simulation system designed to practice various C++ features, including STL algorithms, container manipulations, advanced operations, sorting, searching, and implementing design patterns in the context of automotive or device-based HMIs.
 
@@ -92,19 +92,11 @@ The primary objectives of this project are to:
 
 
 
-# HMI Simulation System
+# HMI Simulation System week-33
  
 This project implements a Human-Machine Interface (HMI) simulation system in C++. The system includes a menu navigation system, a vehicle data display, an event handling system for touchscreen input, and a skin customization feature. Each component is designed to simulate functionalities commonly found in automotive HMI clusters.
  
-## Table of Contents
- 
-- [Objectives](#objectives)
-- [Tasks](#tasks)
-- [Requirements](#requirements)
-- [Usage](#usage)
-- [Installation](#installation)
-- [Contributing](#contributing)
-- [License](#license)
+
  
 ## Objectives
  
