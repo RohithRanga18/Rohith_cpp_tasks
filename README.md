@@ -89,13 +89,7 @@ The primary objectives of this project are to:
 - A C++ compiler (e.g., g++, clang++)
 - Standard library headers: `<iostream>`, `<map>`, `<string>`, `<vector>`, `<thread>`, `<queue>`, `<random>`, `<chrono>`
 
-## Usage
 
-To run the programs, compile each source file separately and execute the generated binaries. Below is an example command:
-
-```bash
-g++ -o hmi_simulation main.cpp
-./hmi_simulation
 
 
 # HMI Simulation System
