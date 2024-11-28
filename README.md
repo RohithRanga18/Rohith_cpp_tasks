@@ -1,119 +1,155 @@
-HMI Simulation System
-This project implements a Human-Machine Interface (HMI) simulation system in C++. It includes multiple components such as a menu navigation system, vehicle data display, event handling system for touchscreen input, skin customization, and advanced C++ features like STL algorithms and design patterns. Each component simulates functionalities commonly found in automotive HMI systems.
+# HMI Simulation System week-3
+ 
+This project implements a Human-Machine Interface (HMI) simulation system in C++. The system includes a menu navigation system, a vehicle data display, an event handling system for touchscreen input, and a skin customization feature. Each component is designed to simulate functionalities commonly found in automotive HMI clusters.
 
-Objectives
+ 
+## Objectives
+ 
 The primary objectives of this project are:
+1. To build a hierarchical menu navigation system.
+2. To simulate real-time vehicle data display.
+3. To implement an event handling system for touchscreen interactions.
+4. To create a skin customization system for theme management.
+ 
+## Tasks
+ 
+### Task 1: Build a Menu Navigation System
+- **Description**: Implements a hierarchical menu structure using classes and data structures.
+- **Features**:
+  - Navigate through menu levels (up, down, enter, back).
+  - Display current menu options on the console.
+  - Keyboard-based interaction for navigation.
+ 
+### Task 2: Simulate an Instrument Cluster Data Display
+- **Description**: Creates a simplified data display system to show vehicle parameters.
+- **Features**:
+  - Class-based design for vehicle data management.
+  - Real-time updates for speed, fuel level, and engine temperature.
+  - Display warnings for parameter thresholds.
+ 
+### Task 3: Event Handling System for Touchscreen Input
+- **Description**: Simulates an event-driven system for processing touchscreen inputs.
+- **Features**:
+  - Event class to represent user interactions.
+  - Event queue for managing multiple events.
+  - Processing and handling specific events (Tap, Swipe).
+ 
+### Task 4: HMI Skin Customization System
+- **Description**: Manages different themes or skins for an HMI display.
+- **Features**:
+  - Theme class to store attributes like colors and font size.
+  - Multiple themes stored using `std::map`.
+  - User interface for theme selection and preview.
+ 
+## Requirements
+ 
+- C++11 or higher
+- A C++ compiler (e.g., g++, clang++)
+- Standard library headers: `<iostream>`, `<map>`, `<string>`, `<vector>`, `<thread>`, `<queue>`, `<random>`, `<chrono>`
+ 
+## Usage
+ 
+To run the programs, compile each source file separately and execute the generated binaries. Below is an example command:
+ 
+```bash
+g++ -o menu_navigation menu_navigation.cpp
+./menu_navigation
 
-To build a hierarchical menu navigation system.
-To simulate real-time vehicle data display.
-To implement an event handling system for touchscreen interactions.
-To create a skin customization system for theme management.
-To practice using STL algorithms in the context of managing HMI control states.
-To implement and understand design patterns like Singleton, Factory, Observer, and Strategy in the context of HMI systems.
-Tasks
-Week 3: HMI System Design
-Task 1: Build a Menu Navigation System
-Description: This task implements a hierarchical menu structure using classes and data structures. It allows navigation through various menu levels, with options to go up, down, enter a submenu, or go back to the previous menu.
 
-Features:
+# HMI Simulation System week-4
 
-Navigate through multiple menu levels.
-Display current menu options.
-Keyboard-based interaction to simulate user navigation.
-Task 2: Simulate an Instrument Cluster Data Display
-Description: This task simulates a real-time vehicle data display that shows parameters like speed, fuel level, and engine temperature.
+This repository contains an HMI (Human-Machine Interface) simulation system designed to practice various C++ features, including STL algorithms, container manipulations, advanced operations, sorting, searching, and implementing design patterns in the context of automotive or device-based HMIs.
 
-Features:
 
-Class-based design to manage vehicle data.
-Real-time updates for key vehicle parameters.
-Display warnings when certain thresholds are exceeded (e.g., low fuel or high engine temperature).
-Task 3: Event Handling System for Touchscreen Input
-Description: This task simulates an event-driven system for processing touchscreen events such as taps and swipes.
+## Objectives
 
-Features:
+The primary objectives of this project are to:
+1. Practice commonly used STL algorithms for managing HMI control states (e.g., button visibility, slider values).
+2. Master container manipulations and retrieval of elements using iterators and algorithms.
+3. Implement advanced STL operations, including transformations and conditional modifications.
+4. Practice sorting, searching, and merging in the context of HMI control data.
+5. Implement design patterns (Singleton, Factory, Observer, Strategy) in an HMI simulation system.
 
-Event class that represents different user interactions.
-Event queue to manage multiple input events.
-Handle touchscreen events like tap or swipe with appropriate responses.
-Task 4: HMI Skin Customization System
-Description: This task manages different themes or skins for the HMI display, allowing the user to select and preview different themes.
+## Tasks
 
-Features:
+### Task 1: Working with STL Algorithms
+- **Goal**: Practice using commonly used STL algorithms to manage HMI control states such as button visibility and slider values.
+- **Scenario**: Imagine an HMI dashboard with buttons and sliders, each control having a unique ID and state (visible, invisible, disabled).
+- **Steps**:
+  1. Define a `Control` structure to represent each control.
+  2. Initialize a `std::vector<Control>` with 5 buttons and 5 sliders.
+  3. Use various STL algorithms to:
+     - `std::for_each`: Iterate through all controls and print their details.
+     - `std::find`: Find a control with a specific ID.
+     - `std::find_if`: Find the first control that is invisible.
+     - `std::adjacent_find`: Find consecutive controls with the same state.
+     - `std::count`: Count the number of visible controls.
+     - `std::count_if`: Count the number of disabled sliders.
+     - `std::equal`: Compare two subranges of controls to check if they are identical.
 
-Theme class to store attributes like colors, fonts, and sizes.
-Store multiple themes using std::map.
-User interface to allow theme selection and previewing.
-Week 4: STL Algorithms & Design Patterns
-Task 1: Working with STL Algorithms
-Goal: Practice using commonly used STL algorithms in managing HMI control states, such as button visibility and slider values.
+  **Output Results**:
+  Print the results of each algorithm in a user-friendly format, such as displaying the count of visible controls or finding the first invisible control.
 
-Scenario: The HMI dashboard contains buttons and sliders, each with a unique ID and state (visible, invisible, or disabled). This task focuses on applying STL algorithms to manage and analyze control states.
+### Task 2: Iterating Through Containers and Finding Elements
+- **Goal**: Practice iterating through containers and retrieving specific elements.
+- **Scenario**: The HMI screen contains dynamic and static widgets, where dynamic widgets are stored in a `std::vector`, and static widgets are stored in a `std::set`.
+- **Steps**:
+  1. Populate the containers:
+     - `std::vector<std::string>` for dynamic widgets (`"Speedometer"`, `"Tachometer"`, etc.).
+     - `std::set<std::string>` for static widgets (`"Logo"`, `"WarningLights"`, etc.).
+  2. Use iterators to print all dynamic widgets.
+  3. Use `std::set::find` to check if a specific widget (e.g., `"WarningLights"`) is in the set.
+  4. Combine both containers into a `std::vector` using `std::copy`.
+  5. Use `std::find` to locate a specific widget in the combined container.
 
-Steps:
+  **Output Results**:
+  Print the list of dynamic widgets and show the result of searching for a specific widget in the set.
 
-Define a data structure for controls (e.g., buttons and sliders).
-Use various STL algorithms to:
-Iterate through controls and display their details.
-Find specific controls by ID.
-Identify the first invisible control.
-Count the number of visible controls or sliders that are disabled.
-Check for consecutive controls with the same state.
-Outcome: The task helps in understanding how to manipulate and query data in containers using STL algorithms.
+### Task 3: Advanced STL Operations
+- **Goal**: Perform advanced operations such as transformations and conditional modifications on HMI control states.
+- **Scenario**: Modify HMI control states based on conditions (e.g., hide all sliders during night mode).
+- **Steps**:
+  1. Use `std::copy` to create a backup of the control list.
+  2. Use `std::fill` to temporarily set all controls to "disabled".
+  3. Use `std::generate` to randomly generate control states.
+  4. Apply transformations:
+     - `std::transform`: Change all sliders to "invisible".
+     - `std::replace`: Replace "disabled" with "enabled".
+     - `std::remove_if`: Filter out invisible controls from the list.
+  5. Other operations:
+     - `std::reverse`: Reverse the control order for debugging.
+     - `std::partition`: Group visible controls together.
 
-Task 2: Iterating Through Containers and Finding Elements
-Goal: Practice iterating through containers and retrieving specific elements in an HMI context.
+  **Output Results**:
+  Show intermediate results after each operation, including the final list of controls.
 
-Scenario: The HMI has two main types of widgets: dynamic widgets (e.g., speedometer, tachometer) stored in a std::vector, and static widgets (e.g., logo, warning lights) stored in a std::set.
+### Task 4: Sorting, Searching, and Merging
+- **Goal**: Practice sorting, searching, and merging in the context of HMI control data.
+- **Scenario**: Merge two sorted lists of controls into a single sorted list for efficient access and perform operations like searching.
+- **Steps**:
+  1. **Sorting**: Sort controls by their ID using `std::sort`.
+  2. **Binary Search**: Search for a control by ID using `std::lower_bound` and `std::upper_bound`.
+  3. **Merging**: Merge two sorted lists using `std::merge`.
+  4. **Set Operations**: Use `std::set_union` and `std::set_intersection` to identify common and unique controls.
 
-Steps:
+### Task 5: Implementing Design Patterns in HMI
+- **Goal**: Implement and understand the Singleton, Factory, Observer, and Strategy design patterns in the context of an HMI simulation system.
+- **Steps**:
+  1. **Singleton**: Implement a `HMISystem` class to manage the HMI state and ensure only one instance exists.
+  2. **Factory**: Create a factory to instantiate different types of controls (e.g., Button, Slider).
+  3. **Observer**: Implement the observer pattern to notify widgets when the system switches between modes (e.g., Day/Night mode).
+  4. **Strategy**: Use the strategy pattern to define different rendering behaviors (e.g., 2D vs. 3D rendering).
 
-Populate the containers with dynamic and static widgets.
-Use iterators to print all dynamic widgets.
-Check if a specific widget (e.g., "WarningLights") is in the std::set.
-Combine both containers into a single list and search for specific widgets.
-Outcome: This task helps in understanding container traversal and element lookup using STL iterators and functions.
+## Requirements
 
-Task 3: Advanced STL Operations
-Goal: Perform advanced STL operations such as transformations and conditional modifications on HMI control states.
+- C++11 or higher
+- A C++ compiler (e.g., g++, clang++)
+- Standard library headers: `<iostream>`, `<map>`, `<string>`, `<vector>`, `<thread>`, `<queue>`, `<random>`, `<chrono>`
 
-Scenario: Based on certain conditions (e.g., night mode), the system needs to modify control states (e.g., hide sliders, disable controls).
+## Usage
 
-Steps:
+To run the programs, compile each source file separately and execute the generated binaries. Below is an example command:
 
-Backup the control list using std::copy.
-Temporarily disable all controls using std::fill.
-Generate random control states using std::generate.
-Apply transformations like making sliders invisible using std::transform.
-Replace control states (e.g., from "disabled" to "enabled").
-Filter out invisible controls with std::remove_if.
-Outcome: The task demonstrates advanced techniques for manipulating collections and modifying elements based on conditions.
-
-Task 4: Sorting, Searching, and Merging
-Goal: Practice sorting, searching, and merging containers in an HMI context.
-
-Scenario: To enhance the system’s performance, the system needs to merge two lists of controls and efficiently access them.
-
-Steps:
-
-Sort the controls by their ID using std::sort.
-Use binary search (std::lower_bound and std::upper_bound) to find specific controls.
-Merge two sorted lists of controls using std::merge.
-Use set operations (e.g., std::set_union and std::set_intersection) to identify unique and common controls.
-Outcome: This task demonstrates how to efficiently manage collections of elements and optimize search and merge operations using STL.
-
-Task 5: Implementing Design Patterns in HMI
-Goal: Implement and understand the Singleton, Factory, Observer, and Strategy design patterns in the context of an HMI system.
-
-Steps:
-
-Singleton: Implement the HMISystem class as a singleton to manage the overall HMI state, ensuring that only one instance exists.
-Factory: Create a factory for generating different types of controls (e.g., buttons, sliders, etc.).
-Observer: Implement the observer pattern to notify widgets when the system switches between different modes (e.g., day mode and night mode).
-Strategy: Use the strategy pattern to define different rendering behaviors (e.g., 2D rendering vs 3D rendering) that can be switched dynamically.
-Outcome: This task demonstrates how to apply design patterns to create flexible and maintainable software for HMI systems.
-
-Requirements
-C++11 or higher
-A C++ compiler (e.g., g++, clang++)
-Standard library headers: <iostream>, <map>, <string>, <vector>, <thread>, <queue>, <random>, <chrono>
+```bash
+g++ -o hmi_simulation main.cpp
+./hmi_simulation
