@@ -92,7 +92,7 @@ The primary objectives of this project are to:
 
 
 
-# HMI Simulation System week-33
+# HMI Simulation System week-3
  
 This project implements a Human-Machine Interface (HMI) simulation system in C++. The system includes a menu navigation system, a vehicle data display, an event handling system for touchscreen input, and a skin customization feature. Each component is designed to simulate functionalities commonly found in automotive HMI clusters.
  
